@@ -42,20 +42,24 @@ function inspectAndStrip(nodeList) {
 }
 
 // run initially (after dom content loaded)
-const hostname = window.location.hostname
-browser.storage.sync.get(hostname).then(res => {
-  if (res[hostname] == 'i') {
-    browser.runtime.sendMessage('ignored')
-  } else {
-    const blocked = popupTagNames.reduce((res, tag) => {
-      const nodes = document.querySelectorAll(tag)
-      if (inspectAndStrip(nodes)) res = true
-      return res
-    }, false)
-    if (blocked) browser.runtime.sendMessage('blocked')
-    createObserver()
-  }
-})
+
+export function main(){
+  const hostname = window.location.hostname
+  browser.storage.sync.get(hostname).then(res => {
+    if (res[hostname] == 'i') {
+      browser.runtime.sendMessage('ignored')
+    } else {
+      const blocked = popupTagNames.reduce((res, tag) => {
+        const nodes = document.querySelectorAll(tag)
+        if (inspectAndStrip(nodes)) res = true
+        return res
+      }, false)
+      if (blocked) browser.runtime.sendMessage('blocked')
+      createObserver()
+    }
+  })
+}
+
 
 function createObserver() {
   // callback function to execute when mutations are observed
