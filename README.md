@@ -12,7 +12,7 @@ You don't have to package or sign the extension before loading it, and it stays 
 
 Once you have loaded a temporary extension, you can see information about it and perform operations on it.
 
-![temp](https://github.com/utkucanozturk/no-cookies-please/tree/main/images/load_temp_ext.png?raw=true)
+![load](./images/load_temp_ext.png)
 
 Alternatively, you can run the extension from the command line using the [web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/) tool.
 
@@ -22,4 +22,4 @@ Alternatively, you can run the extension from the command line using the [web-ex
 
 Now visit a page, and you should see a cookie icon in the toolbar that you can use to list the cookies used by the website.
 
-![temp](https://github.com/utkucanozturk/no-cookies-please/tree/main/images/extension_ss.png?raw=true)
+![extension](./images/extension_ss.png)
