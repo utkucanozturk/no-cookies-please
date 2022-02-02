@@ -9,8 +9,21 @@
         <div class="panel-section panel-section-header">
             <div class="text-section-header" id="header-title"></div>
         </div>
-        <ul id="cookie-list">
-        </ul>
+
+          <div class="toggle">
+            <span class="toggle-text">Cookie pop-ups hidden by default. You can switch off this behavior.</span>
+            
+            <label id="switch" class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div class="is-blocked" style="display:hidden">Pop-up blocked for this site.</div>
+
+        <ul id="cookie-list"> </ul>
+
+      
         <script src="cookies.js"></script>
 </body>
 
